@@ -1,0 +1,38 @@
+1. Membuat database:
+-create database library;
+
+2. Membuat table
+  users
+-CREATE TABLE users(id int PRIMARY KEY AUTO_INCREMENT,name varchar (255),email varchar (255),password varchar(255) );
+categories
+-CREATE TABLE categories( id int PRIMARY KEY AUTO_INCREMENT, nama varchar(255) );
+
+Books
+-CREATE TABLE books ( id int PRIMARY KEY AUTO_INCREMENT, title varchar(255) NOT null, sammary text, stock INT, category_id int NOT null, FOREIGN KEY (category_id) REFERENCES categories(id) ); 
+
+3. Masukkan Data pada table
+- users
+INSERT INTO users(nama, email, password) VALUES ("farhan", "f.farhan.pku@gmail.com", "farhan123");
+INSERT INTO users(nama, email, password) VALUES ("jana doe", "jane@doe.com", "jenita123");
+
+-categories
+INSERT INTO users(nama, email, password) VALUES ("jana doe", "jane@doe.com", "jenita123");
+
+-Books
+INSERT INTO books (title, sammary, stock, category_id) VALUES("Your Name", "Mitsuha Miyamizu, a high school girl living in the fictional town of Itomori in Gifu Prefecture's", 15, 2)
+INSERT INTO books (title, sammary, stock, category_id) VALUES("laskar pelangi", "Belitung is known for its richness in tin, making it one ,25, 1)
+INSERT INTO books (title, sammary, stock, category_id) VALUES("one piece", "The series focuses on Monkey D Luffy, a young man made of rubbe", 50,2)
+
+4.Mengambil data dari database
+A.mengambil data user
+ SELECT id,nama,email FROM users; 
+
+B.mengambil data books
+-SELECT * FROM books WHERE stock > 20; 
+SELECT * FROM `books` WHERE title LIKE '%one%'; 
+
+C.Menampilkan data items boosk dengan categories
+-SELECT books.*, categories.nama FROM books INNER JOIN categories ON books.category_id; 
+
+5.Merubah Data dari database
+-UPDATE books SET stock=30 WHERE id = 1; 
