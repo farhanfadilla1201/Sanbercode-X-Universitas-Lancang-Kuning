@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buat account baru</title>
-</head>
-<body>
-    <h1>Sign up Form</h1>
+@extends('layouts.master')
+@section('title')
+Sign up Form
+@endsection
+@section('content')
+
     <form action="/home"method="post">
     @csrf
         <label>First name</label><br>
         <input type="text" name="fullname" > <br> <br>
         <label>Last name</label><br>
-        <input type="text"> <br> <br>
+        <input type="text" name="lastname"> <br> <br>
         <label>Gender</label><br>
         <input type="radio" name="Gender">male<br>
         <input type="radio" name="Gender">Famale<br> 
@@ -36,5 +33,4 @@
        <input type="submit"value="Sign Up">
         
     </form>
-</body>
-</html>
+    @endsection

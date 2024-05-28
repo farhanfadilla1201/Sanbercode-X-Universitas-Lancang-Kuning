@@ -20,3 +20,11 @@ Route::get('/', [HomeController::class,'index']);
 route::get('/daftar', [AuthController::class,'daftar']);
 
 route::post('/home',[AuthController::class, 'home']);
+
+route::get('/data-table', function(){
+    return view('page.data-table');
+});
+
+route::get('table', function(){
+    return view('page.table');
+});
